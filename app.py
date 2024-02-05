@@ -34,11 +34,11 @@ def resize_images_in_folder(input_folder, output_folder, size, progress=gr.Progr
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
-    total_images = len([name for name in os.listdir(input_folder) if name.endswith(".jpg") or name.endswith(".png")])
+    total_images = len([name for name in os.listdir(input_folder) if name.endswith(".jpg") or name.endswith(".png") or name.endswith(".jpeg") or name.endswith(".webp") or name.endswith(".gif")])
     processed_images = 0
 
     for filename in progress.tqdm(os.listdir(input_folder), desc="Processing images"):
-        if filename.endswith(".jpg") or filename.endswith(".png"):
+        if filename.endswith(".jpg") or filename.endswith(".png") or filename.endswith(".jpeg") or filename.endswith(".webp") or filename.endswith(".gif"):
             input_image_path = os.path.join(input_folder, filename)
             output_image_path = os.path.join(output_folder, filename)
             resize_image(input_image_path, output_image_path, size)
