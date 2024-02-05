@@ -72,7 +72,8 @@ iface = gr.Interface(
         gr.Textbox(label="Custom Height")
     ],
     outputs="text",
-    title="RatioScope",
-    description="## Organize images")
+    title="PicEase",
+    description="Effortlessly optimize and resize images with this user-friendly app. Batch resize with ease, preserve original quality, and simplify your image enhancement process.",
+    article="Created by <a href='https://github.com/sanmilano'>San Milano</a>.")
 
 iface.queue().launch()
