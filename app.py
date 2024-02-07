@@ -40,7 +40,8 @@ def resize_images_in_folder(input_folder, output_folder, size, progress=gr.Progr
     for filename in progress.tqdm(os.listdir(input_folder), desc="Processing images"):
         if filename.endswith(".jpg") or filename.endswith(".png") or filename.endswith(".jpeg") or filename.endswith(".webp") or filename.endswith(".gif"):
             input_image_path = os.path.join(input_folder, filename)
-            output_image_path = os.path.join(output_folder, filename)
+            filename_without_ext = os.path.splitext(filename)[0]
+            output_image_path = os.path.join(output_folder, filename_without_ext + ".png")
             resize_image(input_image_path, output_image_path, size)
             processed_images += 1
 
